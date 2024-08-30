@@ -4,6 +4,5 @@
 
 Auto-suggestion
 ```
-brew: brew install zsh-autosuggestions
-.zshrc: source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
