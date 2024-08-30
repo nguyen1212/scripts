@@ -1,0 +1,25 @@
+#!/bin/sh
+
+sessions=$(find \
+	~/.config \
+	~/Project \
+	-maxdepth 1 -mindepth 1 -type d &&
+	(tmux list-sessions -F \#S | sed 's/^/active: /'))
+
+session=$(echo "$sessions" | sort -r | fzf --border --height=80%)
+session_name=$(basename "$session")
+session_name=$(echo ${session_name##*: } | tr . _) # remove "active:" prefix
+
+if [ -z "$session" ]; then
+	exit 0
+fi
+
+if ! tmux has-session -t "$session_name" 2>/dev/null; then
+	tmux new-session -s "$session_name" -c "$session" -d
+fi
+
+if tmux info 2>/dev/null; then
+	tmux switch-client -t "$session_name"
+else
+	tmux attach-session -t "$session_name"
+fi
