@@ -31,5 +31,23 @@ colima start
 
 ENV
 ```
-DOCKER_HOST=unix:///$HOME/.colima/default/docker.sock // set docker host to docker daemon socket
+export DOCKER_HOST=unix:///$HOME/.colima/default/docker.sock // set docker host to docker daemon socket
+```
 
+## Node
+
+### NVM
+
+- Use nvm to manage node
+CLI
+```
+brew install nvm
+nvm install v16.20.2 // install specific node version
+```
+
+ENV
+```
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" 
+```
