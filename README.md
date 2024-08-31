@@ -26,19 +26,40 @@ CLI
 ```
 brew install colima
 brew services start colima // start colima when restart
-colima start
+colima start --mount-type 9p
 ```
 
 ENV
 ```
+# zshrc
 export DOCKER_HOST=unix:///$HOME/.colima/default/docker.sock // set docker host to docker daemon socket
+
+# /Users/<username>/.lima/_config/override.yaml
+mountType: 9p
+mounts:
+  - location: "/Users/<username>"
+    writable: true
+    9p:
+      securityModel: mapped-xattr
+      cache: mmap
+  - location: "~"
+    writable: true
+    9p:
+      securityModel: mapped-xattr
+      cache: mmap
+  - location: /tmp/colima
+    writable: true
+    9p:
+      securityModel: mapped-xattr
+      cache: mmap
 ```
+
+
 
 ## Node
 
 ### NVM
 
-- Use nvm to manage node
 CLI
 ```
 brew install nvm
