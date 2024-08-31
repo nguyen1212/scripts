@@ -17,3 +17,12 @@ source_up
 
 export VAR=value
 ```
+
+## Docker
+
+### Colima
+```
+brew install colima
+brew services start colima // start colima when restart
+colima start
+```
