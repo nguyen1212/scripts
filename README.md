@@ -34,7 +34,7 @@ ENV
 # zshrc
 export DOCKER_HOST=unix:///$HOME/.colima/default/docker.sock // set docker host to docker daemon socket
 
-# /Users/<username>/.lima/_config/override.yaml
+# /Users/<username>/.colima/_lima/_config/override.yaml
 mountType: 9p
 mounts:
   - location: "/Users/<username>"
