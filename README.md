@@ -7,6 +7,12 @@ CLI:Auto-suggestion
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
+CLI: Github CLI
+Usage: for octo.nvim
+```
+brew install gh
+```
+
 ## Env
 
 ### Direnv
